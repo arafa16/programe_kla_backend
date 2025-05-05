@@ -16,7 +16,7 @@ Make Menu For All Programe.
 ## Requirements
 
 - [![Node.js](https://img.shields.io/badge/Node.js%20^18.16.0-43853D?logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
-- [![npm](https://img.shields.io/badge/npm%20^8.18.0-F69220?logo=pnpm&logoColor=white "npm")](https://www.npmjs.com/)
+- [![npm](https://img.shields.io/badge/npm%20^8.18.0-F69220?logo=npm&logoColor=white "npm")](https://www.npmjs.com/)
 
 ## Installation
 
