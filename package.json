@@ -1,0 +1,26 @@
+{
+  "name": "programe-backend",
+  "version": "1.0.0",
+  "description": "api programe kla",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ara fa adri",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "sequelize": "^6.37.7",
+    "argon2": "^0.41.1",
+    "connect-session-sequelize": "^7.1.7",
+    "express-fileupload": "^1.5.1",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mysql2": "^3.11.3"
+  }
+}
