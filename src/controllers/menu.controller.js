@@ -266,10 +266,50 @@ const deleteMenu = async (req, res) => {
     }
 }
 
+const getMenuByUuid = async (req, res) => {
+    const {uuid} = req.params;
+
+    try {
+        if (!uuid) {
+            const error = new CustomError("uuid can't be null", 404)
+            throw error
+        }
+
+        const menu = await menuModel.findOne({
+            where:{
+                uuid
+            }
+        });
+
+        if(!menu){
+            const error = new CustomError("menu not found", 404)
+            throw error
+        }
+
+        return res.status(200).json({
+            status:200,
+            success: true,
+            datas:{
+                message:"menu found",
+                data:menu
+            }
+        });
+    } catch (error) {
+        return res.status(error.statusCode || 500).json({
+            status:error.statusCode || 500,
+            success: false,
+            datas:{
+                message: error.message || "something went wrong"
+            }
+        });
+    }
+}
+
 
 module.exports = {
     getAllMenu,
     createMenu,
     updateMenu,
-    deleteMenu
+    deleteMenu,
+    getMenuByUuid
 }
