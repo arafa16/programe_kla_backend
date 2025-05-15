@@ -201,10 +201,39 @@ const getCompanyFirst = async (req, res) => {
     }
 }
 
+const getAllCompany = async (req, res) => {
+    try {
+        const companies = await companyModel.findAll();
+
+        if(!companies){
+            const error = new CustomError("company not found", 404)
+            throw error
+        }
+
+        return res.status(200).json({
+            status:200,
+            success: true,
+            datas:{
+                message:"company found",
+                data:companies
+            }
+        });
+    } catch (error) {
+        return res.status(error.statusCode || 500).json({
+            status:error.statusCode || 500,
+            success: false,
+            datas:{
+                message: error.message || "something went wrong"
+            }
+        });
+    }
+}
+
 module.exports = {
     createCompany,
     getCompanyByUuid,
     updateCompany,
     deleteCompany,
-    getCompanyFirst
+    getCompanyFirst,
+    getAllCompany
 }
