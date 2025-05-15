@@ -1,8 +1,19 @@
-## [Unreleased](https://github.com/arafa16/programe_kla_backend/compare/1.0.0...main)
+## [Unreleased](https://github.com/arafa16/programe_kla_backend/compare/1.1.0...main)
+
+## [1.1.0](https://github.com/arafa16/programe_kla_backend/releases/tag/1.1.0) - 2025-05-15
+
+- bump version into 1.1.0 by [@arafa16](https://github.com/arafa16) in [#bf2320f](https://github.com/arafa16/programe_kla_backend/commit/bf2320f1f5571b05b54f4f8c488038947f4756d1).
+
+- create controller and route company by [@arafa16](https://github.com/arafa16) in [#9d6427f](https://github.com/arafa16/programe_kla_backend/commit/9d6427f1585b76a110763d2baab9f62a1af98138).
+
+- create get data by uuid by [@arafa16](https://github.com/arafa16) in [#a7098bb](https://github.com/arafa16/programe_kla_backend/commit/a7098bbb25c2ff5494694633f3e61a6e34bfe155).
 
 
 ## [1.0.0](https://github.com/arafa16/programe_kla_backend/releases/tag/1.0.0) - 2025-05-05
 
+- create controller and route company by [@arafa16](https://github.com/arafa16) in [#9d6427f](https://github.com/arafa16/programe_kla_backend/commit/9d6427f1585b76a110763d2baab9f62a1af98138).
+
+- create get data by uuid by [@arafa16](https://github.com/arafa16) in [#a7098bb](https://github.com/arafa16/programe_kla_backend/commit/a7098bbb25c2ff5494694633f3e61a6e34bfe155).
 
 - create index to be main by [@arafa16](https://github.com/arafa16) in [#16debfd](https://github.com/arafa16/programe_kla_backend/commit/16debfd80666f0ccaf92f407688c65b2dfae5c6e).
 
