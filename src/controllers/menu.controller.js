@@ -4,6 +4,7 @@ const {
 const path = require('path');
 const crypto = require('crypto');
 const fs = require('fs');
+const {Op} = require('sequelize');
 
 class CustomError extends Error {
     constructor(message, statusCode) {
@@ -44,8 +45,52 @@ const getAllMenu = async (req, res) => {
     }
 }
 
+const getMenuTable = async (req, res) => {
+
+    try {
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 10;
+        const offset = Number(page - 1) * limit;
+        const search = req.query.search || '';
+
+        const menu = await menuModel.findAndCountAll({
+            order:[
+                ['created_at', 'DESC']
+            ],
+            where:{
+                name:{
+                    [Op.like]: `%${search}%`
+                }
+            },
+            limit,
+            offset,
+        });
+
+        if(!menu){
+            const error = new CustomError("menu not found", 404)
+            throw error
+        }
+        return res.status(200).json({
+            status:200,
+            success: true,
+            datas:{
+                message:"menu found",
+                data:menu
+            }
+        });
+    } catch (error) {
+        return res.status(error.statusCode || 500).json({
+            status:error.statusCode || 500,
+            success: false,
+            datas:{
+                message: error.message || "something went wrong"
+            }
+        });
+    }
+}
+
 const createMenu = async (req, res) => {
-    const {name, logo_name, logo_file_name, logo_file_link, link, description} = req.body;
+    const {name, link, description, is_active} = req.body;
 
     try {
         if (!name || !link || !description) {
@@ -96,7 +141,8 @@ const createMenu = async (req, res) => {
             logo_file_name,
             logo_file_link,
             link,
-            description
+            description,
+            is_active
         });
 
         return res.status(201).json({
@@ -119,7 +165,7 @@ const createMenu = async (req, res) => {
 }
 
 const updateMenu = async (req, res) => {
-    const {name, logo_name, logo_file_name, logo_file_link, link, description} = req.body;
+    const {name, link, description, is_active} = req.body;
     const {uuid} = req.params;
 
     try {
@@ -137,6 +183,33 @@ const updateMenu = async (req, res) => {
         if(!findData){
             const error = new CustomError("menu not found", 404)
             throw error
+        }
+
+        if(!req.files) {
+            const updateData = await menuModel.update({
+                name,
+                link,
+                description,
+                is_active
+            },{
+                where:{
+                    uuid
+                }
+            });
+
+            if(!updateData){
+                const error = new CustomError("menu not updated", 404)
+                throw error
+            }
+
+            return res.status(201).json({
+                status:201,
+                success: true,
+                datas:{
+                    message:"menu updated",
+                    data:updateData
+                }
+            });
         }
 
         const file = req.files.logo;
@@ -311,5 +384,6 @@ module.exports = {
     createMenu,
     updateMenu,
     deleteMenu,
-    getMenuByUuid
+    getMenuByUuid,
+    getMenuTable
 }

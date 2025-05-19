@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     logo_file_name: DataTypes.STRING,
     logo_file_link: DataTypes.STRING,
     description: DataTypes.STRING,
-    link: DataTypes.TEXT
+    link: DataTypes.TEXT,
+    is_active: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'menu',
