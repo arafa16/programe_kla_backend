@@ -8,6 +8,7 @@ const db = require('./models/index.js');
 const authRoute = require('./routes/auth.route.js');
 const menuRoute = require('./routes/menu.route.js');
 const companyRoute = require('./routes/company.route.js');
+const userRoute = require('./routes/user.route.js');
 
 dotenv.config();
 
@@ -43,6 +44,7 @@ app.use(express.static('public'));
 app.use('/auth', authRoute); // User authentication routes
 app.use('/menu', menuRoute); // Menu routes
 app.use('/company', companyRoute); // Company routes
+app.use('/user', userRoute); // User management routes
 
 app.listen(process.env.BACKEND_PORT, ()=>{
     console.log(`server running at port ${process.env.BACKEND_PORT}`);
