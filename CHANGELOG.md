@@ -1,4 +1,17 @@
-## [Unreleased](https://github.com/arafa16/programe_kla_backend/compare/1.1.0...main)
+## [Unreleased](https://github.com/arafa16/programe_kla_backend/compare/1.2.0...main)
+
+
+## [1.2.0](https://github.com/arafa16/programe_kla_backend/releases/tag/1.2.0) - 2025-05-19
+
+- build: bump version into 1.2.0 by [@arafa16](https://github.com/arafa16) in [#8bbd5e3](https://github.com/arafa16/programe_kla_backend/commit/8bbd5e3fa07fa0892b44e036e187c216c834d4b5).
+
+- build: make user controller and route by [@arafa16](https://github.com/arafa16) in [#59bad60](https://github.com/arafa16/programe_kla_backend/commit/59bad6008e72417f9d91c1374acb2a1620b9942d).
+
+- fixs: fixed trouble when menu not active by [@arafa16](https://github.com/arafa16) in [#e2c081f](https://github.com/arafa16/programe_kla_backend/commit/e2c081f0815c6477f6a41a709b4ec852aab42f1a).
+
+- fixs: fixed trouble in menu modul and crontroller by [@arafa16](https://github.com/arafa16) in [#14df6c3](https://github.com/arafa16/programe_kla_backend/commit/14df6c3280ff03ac885c3206c3b90f6e22b2f74e).
+
+
 
 ## [1.1.0](https://github.com/arafa16/programe_kla_backend/releases/tag/1.1.0) - 2025-05-15
 
@@ -7,6 +20,7 @@
 - create controller and route company by [@arafa16](https://github.com/arafa16) in [#9d6427f](https://github.com/arafa16/programe_kla_backend/commit/9d6427f1585b76a110763d2baab9f62a1af98138).
 
 - create get data by uuid by [@arafa16](https://github.com/arafa16) in [#a7098bb](https://github.com/arafa16/programe_kla_backend/commit/a7098bbb25c2ff5494694633f3e61a6e34bfe155).
+
 
 
 ## [1.0.0](https://github.com/arafa16/programe_kla_backend/releases/tag/1.0.0) - 2025-05-05
